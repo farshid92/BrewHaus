@@ -1,10 +1,10 @@
 export function Hero() {
     return (
-        <section id="hero" className="mx-auto max-w-[1100px] px-6 pt-20 pb-16">
+        <section id="hero" className="mx-auto max-w-[1100px] px-6 pt-12 pb-10 sm:pt-20 sm:pb-16">
             <p className="mb-4 text-xs tracking-[0.15em] text-clay uppercase">
                 Roasted weekly · Shipped worldwide
             </p>
-            <h1 className="max-w-xl text-6xl leading-[1.05] font-bold">
+            <h1 className="max-w-xl text-4xl leading-[1.05] font-bold sm:text-6xl">
                 Coffee worth <span className="text-ember">getting up</span> for.
             </h1>
             <p className="mt-5 max-w-lg text-lg text-ink-soft">
