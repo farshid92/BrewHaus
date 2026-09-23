@@ -19,6 +19,6 @@ Clone the repo and open `index.html` in a browser (or use the VS Code
 ## Roadmap
 
 - [x] Week 1 — Static HTML/CSS landing page
-- [ ] Week 2 — React + Tailwind, client-side interactivity
+- [x] Week 2 — React + Tailwind, client-side interactivity
 - [ ] Week 3 — Backend API + Postgres, deployed live
 - [ ] Week 4 — Stripe checkout, tests, CI/CD
