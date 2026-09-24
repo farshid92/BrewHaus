@@ -1,11 +1,27 @@
-import { useState } from 'react'
-import { products } from '../data/products'
+import { useState, useEffect } from 'react'
 import { ProductCard } from './ProductCard'
 
 const categories = ['All', 'Beans', 'Equipment']
 
 export function Shop() {
+  const [products, setProducts] = useState([])
+  const [loading, setLoading] = useState(true)
   const [filter, setFilter] = useState('All')
+
+  useEffect(() => {
+    async function loadProducts() {
+      try {
+        const response = await fetch('/api/products')
+        const data = await response.json()
+        setProducts(data)
+      } catch (err) {
+        console.error('Failed to load products', err)
+      } finally {
+        setLoading(false)
+      }
+    }
+    loadProducts()
+  }, [])
 
   const filtered =
     filter === 'All' ? products : products.filter((p) => p.category === filter)
@@ -31,11 +47,15 @@ export function Shop() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {filtered.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
+      {loading ? (
+        <p className="text-ink-soft">Loading products...</p>
+      ) : (
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {filtered.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+      )}
     </section>
   )
 }
