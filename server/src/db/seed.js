@@ -19,7 +19,7 @@ async function seed() {
       await db.insert(productImages).values({
         id: randomUUID(),
         productId: inserted.id,
-        url: inserted, imageUrl,
+        url: inserted.imageUrl,
         sortOrder: 0,
       })
     }
