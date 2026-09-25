@@ -3,22 +3,46 @@
 A coffee bean & equipment e-commerce site, built step by step while learning
 HTML, CSS, JavaScript/React, a backend, and payments.
 
-## Week 1 — Static landing page
+## Live
 
-Built with plain HTML5 and CSS3, no framework:
+- **Site**: https://brew-haus-zeta.vercel.app
+- **API**: https://brewhaus-production.up.railway.app
 
-- Semantic HTML structure (`header`, `nav`, `main`, `section`, `article`, `footer`)
-- Responsive layout with CSS Grid and Flexbox (desktop / tablet / mobile breakpoints)
-- CSS custom properties for a consistent design system (colors, fonts)
+## Tech stack
 
-### Run it locally
+- **Frontend**: React (JavaScript) + Vite + Tailwind CSS v4, React Router
+- **Backend**: Express + Drizzle ORM
+- **Database**: PostgreSQL (Neon)
+- **Auth**: better-auth (email/password)
+- **Hosting**: Vercel (frontend), Railway (backend)
 
-Clone the repo and open `index.html` in a browser (or use the VS Code
-"Live Server" extension for auto-reload).
+## Project structure
+
+- `client/` — React app (Vite)
+- `server/` — Express API + Drizzle schema
+
+## Run it locally
+
+**Backend:**
+
+cd server
+npm install
+# copy .env.example to .env and fill in a real Neon DATABASE_URL + a generated BETTER_AUTH_SECRET
+npm run db:push
+npm run db:seed
+npm run dev
+
+**Frontend** (in a separate terminal):
+
+cd client
+npm install
+npm run dev
+
+Then open `http://localhost:5173`.
 
 ## Roadmap
 
 - [x] Week 1 — Static HTML/CSS landing page
 - [x] Week 2 — React + Tailwind, client-side interactivity
-- [ ] Week 3 — Backend API + Postgres, deployed live
+- [x] Week 3 — Backend API + Postgres, deployed live, with auth
 - [ ] Week 4 — Stripe checkout, tests, CI/CD
