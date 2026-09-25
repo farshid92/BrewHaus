@@ -66,6 +66,9 @@ export const products = pgTable(
     slug: text('slug').notNull(),
     name: text('name').notNull(),
     tagline: text('tagline').notNull(),
+    description: text('description').notNull(),
+    origin: text('origin'),
+    roast: text('roast'),
     category: text('category').notNull(),
     priceCents: integer('price_cents').notNull(),
     currency: text('currency').notNull().default('usd'),
@@ -76,3 +79,11 @@ export const products = pgTable(
   },
   (table) => [uniqueIndex('products_slug_idx').on(table.slug)],
 )
+
+export const productImages = pgTable('product_images', {
+  id: text('id').primaryKey(),
+  productId: text('product_id').notNull()
+    .references(() => products.id, { onDelete: 'cascade' }),
+  url: text('url').notNull(),
+  sortOrder: integer('sort_order').notNull().default(0),
+})
