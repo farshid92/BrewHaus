@@ -1,0 +1,25 @@
+[33mbc0bc52[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m feat: add product detail page with image gallery
+[33m3000d56[m fix: correct typo in seed.js causing productImages insert to crash
+[33m015552f[m feat and fix: return product images in Get/api/products/:slug correct product image query and response spread in :slug route
+[33me641f44[m feat: add description/origin/roast firlds and product_images table
+[33mda0b600[m docs: rewrite README to reflect current client/server architecture
+[33m38756ac[m fix: polyfill globalThis.crypto for environments where it's not a default global
+[33m2adf3af[m fix: pin Node version to 20+ for Railway (better-auth needs global crypto)
+[33m2b0b961[m chore: add Vercel rewrite config for API proxy and SPA routing
+[33me440090[m chore: add Railway deploy config
+[33m167bfab[m feat: add React Router and login/signup pages with better-auth
+[33m93295b4[m feat: add React Router
+[33m3196315[m feat: connect shop to real /api/products endpoint via vite proxy
+[33mb20badf[m feat: add Express server with products route and better-auth config
+[33m4473c91[m feat: add Express/Drizzle server scaffold with Postgres schema and product seed script
+[33m3e02c28[m chore: restructure into client/ and server/ layout
+[33m063e027[m chore: remove unused Week 1 styles.css
+[33m6a3e266[m style: add responsive breakpoints for headder, hero, and shop grid
+[33mfea404b[m feat: rebuild landing page as React components with category filter and quantity stepper
+[33m86ab89d[m chore: remove Vite demo boilerplate, add Tailwind theme tokens
+[33m273d2a1[m chore: scaffold Vite + React project
+[33m9b51a34[m docs: update README with project description and roadmap
+[33ma03bb46[m style: add responsive breakpoints for tablet and mobile
+[33m91d85f9[m style: add base styles, header nav, hero, shop grid, about, footer
+[33m6f5e06e[m add html skeleton for landing page
+[33m4f8bc05[m docs: initial commit
