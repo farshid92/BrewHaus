@@ -1,7 +1,7 @@
 # BrewHaus
 
 A coffee bean & equipment e-commerce site, built step by step while learning
-HTML, CSS, JavaScript/React, a backend, and payments
+HTML, CSS, JavaScript/React, a backend, and payments.
 
 ## Live
 
