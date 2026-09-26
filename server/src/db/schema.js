@@ -79,11 +79,43 @@ export const products = pgTable(
   },
   (table) => [uniqueIndex('products_slug_idx').on(table.slug)],
 )
-
+/* ===========================================================================
+ * Product Images TABLE
+ * ======================================================================== */
 export const productImages = pgTable('product_images', {
   id: text('id').primaryKey(),
   productId: text('product_id').notNull()
     .references(() => products.id, { onDelete: 'cascade' }),
   url: text('url').notNull(),
   sortOrder: integer('sort_order').notNull().default(0),
+})
+
+/* ===========================================================================
+ * Orders Schema
+ * ======================================================================== */
+
+export const orders = pgTable(
+  'orders',
+  {
+    id: text('id').primaryKey(),
+    userId: text('user_id')
+      .notNull()
+      .references(() => user.id, { onDelete: 'cascade' }),
+    status: text('status').notNull().default('pending'),
+    totalCents: integer('total_cents').notNull(),
+    currency: text('currency').notNull().default('usd'),
+    stripeSessionId: text('stripe_session_id'),
+    createdAt: timestamp('created_at').notNull().defaultNow(),
+  },
+)
+
+export const orderItems = pgTable('order_items', {
+  id: text('id').primaryKey(),
+  orderId: text('order_id')
+    .notNull()
+    .references(() => orders.id, { onDelete: 'cascade' }),
+  productId: text('product_id').references(() => products.id, { onDelete: 'set null' }),
+  nameAtPurchase: text('name_at_purchase').notNull(),
+  unitPriceCents: integer('unit_price_cents').notNull(),
+  quantity: integer('quantity').notNull(),
 })
