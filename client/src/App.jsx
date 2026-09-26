@@ -6,6 +6,7 @@ import { About } from './components/About'
 import { Footer } from './components/Footer'
 import { Login } from './components/Login'
 import { ProductDetail } from './components/ProductDetail'
+import { CheckoutSuccess } from './components/CheckoutSuccess'
 
 function Home() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/login" element={<Login mode="signin" />} />
         <Route path="/signup" element={<Login mode="signup" />} />
         <Route path="/products/:slug" element={<ProductDetail />} />
+        <Route path="/checkout/success" element={<CheckoutSuccess />} />
       </Routes>
       <Footer />
     </BrowserRouter>
