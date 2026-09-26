@@ -45,4 +45,4 @@ Then open `http://localhost:5173`.
 - [x] Week 1 — Static HTML/CSS landing page
 - [x] Week 2 — React + Tailwind, client-side interactivity
 - [x] Week 3 — Backend API + Postgres, deployed live, with auth
-- [ ] Week 4 — Stripe checkout, tests, CI/CD
+- [x] Week 4 — Stripe checkout, tests, CI/CD
